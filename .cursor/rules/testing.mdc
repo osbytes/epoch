@@ -1,0 +1,39 @@
+---
+description: Testing rules for the Epoch project
+globs: "**/*"
+alwaysApply: true
+---
+
+# Testing Rules (Mandatory)
+
+## Unit Tests
+- **EVERY** new function, utility, or logic change must include unit tests.
+- Use **Vitest** for unit tests in `packages/core/` and `packages/react/`.
+- Tests must cover:
+  - Happy path
+  - Error cases
+  - Edge cases (empty input, null/undefined, boundary values)
+- Test files live next to source files: `foo.ts` → `foo.test.ts`.
+- Aim for descriptive test names: `it('should return null when schema validation fails')`.
+
+## E2E Tests
+- **ALL** user-facing flows must have Playwright E2E tests.
+- E2E tests live in `apps/demo/e2e/`.
+- Test critical user journeys:
+  - Full form submission flow
+  - Step navigation (next, back, go-to)
+  - Draft persistence (refresh page, data returns)
+  - Validation errors per step
+  - Mobile responsiveness (viewport testing)
+- Use `data-testid` attributes for selectors, never rely on CSS classes or text content.
+
+## Test Running
+- Run `pnpm test` before declaring any task complete.
+- Fix failing tests immediately. Do not skip or ignore failing tests.
+- If you add a new test framework (like Playwright), ensure CI runs it.
+
+## Anti-Patterns
+- ❌ Submitting code without tests
+- ❌ Skipping or ignoring failing tests
+- ❌ Writing tests that don't cover error cases
+- ❌ Using CSS classes or text content for E2E selectors

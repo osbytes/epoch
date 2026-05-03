@@ -1,0 +1,92 @@
+---
+description: TypeScript quality standards for the Epoch project
+globs: "**/*.ts,**/*.tsx"
+alwaysApply: true
+---
+
+# TypeScript Quality Standards (Non-Negotiable)
+
+## No Single-Character Variables
+- **NEVER** use single-character variable names.
+- **Exception:** Loop indices (`i`, `j`, `k`) and coordinate pairs (`x`, `y`) only.
+- **Bad:** `const n = getName()` — **Good:** `const userName = getName()`
+- **Bad:** `const d = new Date()` — **Good:** `const currentDate = new Date()`
+- **Bad:** `const e = event` — **Good:** `const clickEvent = event`
+
+## No `any` Type
+- **NEVER** use the `any` type. Ever.
+- Use `unknown` when the type is genuinely unknown at compile time.
+- Use proper generics (`T`, `K`, `V`) with meaningful constraints.
+- Use discriminated unions or branded types when needed.
+- **Bad:** `function parse(data: any)` — **Good:** `function parse<T>(data: unknown): T`
+- If you encounter `any` in existing code, refactor it as part of your change.
+
+## No `as` Keyword (Type Assertions)
+- **NEVER** use the `as` keyword for type assertions.
+- **Never:** `value as string`, `element as HTMLInputElement`, `data as MyType`
+- Use type guards (`typeof`, `instanceof`, custom predicates) instead.
+- Use proper type narrowing with `if` statements.
+- Fix the underlying type issue rather than asserting around it.
+- **Bad:** `const input = event.target as HTMLInputElement`
+- **Good:**
+  ```typescript
+  if (event.target instanceof HTMLInputElement) {
+    const input = event.target
+  }
+  ```
+
+## Strict TypeScript
+- All packages use `strict: true` in `tsconfig.json`.
+- Enable `noImplicitReturns`, `noFallthroughCasesInSwitch`, `noUnusedLocals`, `noUnusedParameters`.
+- Explicit return types on all exported functions and public class methods.
+- Prefer `interface` over `type` for object shapes. Use `type` for unions, mapped types, and utility types.
+
+## Code Clarity
+- Write code that is self-documenting. Prefer clear variable names over comments explaining what a variable does.
+- Keep functions small and focused (< 20 lines when possible).
+- Avoid nested ternaries. Use early returns.
+- Prefer `const` over `let`. Never use `var`.
+
+## Good Patterns
+
+```typescript
+// ✅ Good: Descriptive names, no any, no as, proper types
+interface UserProfile {
+  displayName: string
+  emailAddress: string
+  accountCreatedAt: Date
+}
+
+function formatUserProfile(profile: UserProfile): string {
+  const formattedDate = profile.accountCreatedAt.toLocaleDateString()
+  return `${profile.displayName} (${profile.emailAddress}) — ${formattedDate}`
+}
+
+// ✅ Good: Type guard instead of as
+function isValidInputElement(target: EventTarget | null): target is HTMLInputElement {
+  return target instanceof HTMLInputElement
+}
+
+function handleInputEvent(event: Event): void {
+  if (isValidInputElement(event.target)) {
+    const inputValue = event.target.value
+    processInputValue(inputValue)
+  }
+}
+
+// ✅ Good: Generics instead of any
+function createStore<T>(initialValue: T): { get: () => T; set: (value: T) => void } {
+  let currentValue = initialValue
+  return {
+    get: () => currentValue,
+    set: (value: T) => { currentValue = value },
+  }
+}
+```
+
+## Anti-Patterns
+- ❌ `const x = ...` — use descriptive names
+- ❌ `function foo(a: any, b: any)` — use proper types
+- ❌ `const value = something as string` — use type guards
+- ❌ `let` when `const` would work
+- ❌ Using `@ts-ignore` or `@ts-expect-error`

@@ -1,0 +1,29 @@
+---
+description: Documentation rules for the Epoch project
+globs: "**/*"
+alwaysApply: true
+---
+
+# Documentation Rules
+
+## Update Docs Directory
+- **ALWAYS** update files in the `docs/` directory when implementing or changing features.
+- Mark tasks as complete (`- [x]`) in the relevant day document as you finish them.
+- If a task doesn't exist in the docs, add it before implementing.
+
+## Keep Feature Docs Current
+- When you change the public API, update:
+  - The relevant `docs/day-X-*.md` file
+  - `spike.md` high-level checkboxes
+  - `docs/README.md` status table if phases complete
+- When adding new concepts, add them to the appropriate architecture section in docs.
+
+## Code Documentation
+- All exported functions must have TSDoc comments with `@param` and `@returns`.
+- Complex internal functions should have inline comments explaining the "why", not the "what".
+- Keep `README.md` accurate if it references specific APIs or examples.
+
+## Anti-Patterns
+- ❌ Changing code without updating `docs/`
+- ❌ Submitting code without updating `spike.md` checkboxes
+- ❌ Adding features without documenting them

@@ -1,0 +1,43 @@
+---
+description: Workflow rules for the Epoch project
+globs: "**/*"
+alwaysApply: true
+---
+
+# Workflow Rules
+
+## Before Starting Work
+1. Read the relevant `docs/day-X-*.md` file.
+2. Understand the current state by reading existing code.
+3. Update the todo list in your response.
+
+## While Working
+1. Make the smallest change that achieves the goal.
+2. Run tests frequently (`pnpm test --run` for speed).
+3. Run typecheck (`pnpm typecheck`) before finishing.
+
+## Before Finishing
+1. Verify all tests pass: `pnpm test`
+2. Verify types pass: `pnpm typecheck`
+3. Verify build passes: `pnpm build`
+4. Update documentation in `docs/` and `spike.md`.
+5. Review your diff for:
+   - No `any` types
+   - No `as` assertions
+   - No single-character variables
+   - No missing tests
+
+## Verification Checklist
+Before completing any task, confirm:
+
+- [ ] No single-character variables (except `i`, `j`, `k`, `x`, `y` in appropriate contexts)
+- [ ] No `any` types used
+- [ ] No `as` keyword used
+- [ ] All functions have explicit return types
+- [ ] Unit tests added and passing
+- [ ] E2E tests added for user-facing changes
+- [ ] `docs/` updated with task progress
+- [ ] `spike.md` checkboxes updated
+- [ ] `pnpm test` passes
+- [ ] `pnpm typecheck` passes
+- [ ] `pnpm build` passes

@@ -1,0 +1,9 @@
+dist
+node_modules
+coverage
+.turbo
+test-results
+*.md
+*.yml
+*.yaml
+*.json

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Epoch multi-step flow">
+  <title>Epoch</title>
+  <style>
+    .rail {
+      fill: none;
+      stroke: #94a3b8;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .node {
+      fill: none;
+      stroke: #334155;
+      stroke-width: 3.5;
+    }
+    .goal {
+      fill: #2563eb;
+      stroke: #1d4ed8;
+      stroke-width: 2.5;
+    }
+    @media (prefers-color-scheme: dark) {
+      .rail {
+        stroke: #64748b;
+      }
+      .node {
+        stroke: #e2e8f0;
+      }
+      .goal {
+        fill: #3b82f6;
+        stroke: #60a5fa;
+      }
+    }
+  </style>
+  <polyline class="rail" points="22,62 60,40 98,62" />
+  <circle class="node" cx="22" cy="62" r="10" />
+  <circle class="node" cx="60" cy="40" r="12" />
+  <circle class="goal" cx="98" cy="62" r="10" />
+</svg>

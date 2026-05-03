@@ -1,0 +1,27 @@
+---
+description: Architecture rules for the Epoch monorepo
+globs: "**/*"
+alwaysApply: true
+---
+
+# Architecture Rules
+
+## Monorepo Boundaries
+- `packages/core/` is framework-agnostic. No React, no DOM APIs.
+- `packages/react/` is the only React-aware package. It depends on `core`.
+- `apps/demo/` is the only app. It depends on `react`.
+- Never create circular dependencies between packages.
+
+## Headless Library
+- Epoch is headless. **Never** add UI components, CSS, or styling to `packages/core/` or `packages/react/`.
+- The demo app (`apps/demo/`) is the only place for UI and styling.
+
+## Peer Dependencies
+- `zod`, `react`, `react-dom`, `react-hook-form`, `@trpc/*` are peer dependencies.
+- Never bundle peer dependencies. Mark them as `external` in Vite configs.
+
+## Anti-Patterns
+- ❌ Adding UI components to `packages/core/` or `packages/react/`
+- ❌ Creating circular dependencies between packages
+- ❌ Bundling peer dependencies
+- ❌ Using DOM APIs in `packages/core/`
