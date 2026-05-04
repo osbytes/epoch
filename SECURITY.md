@@ -2,7 +2,7 @@
 
 ## Supported versions
 
-Security updates are applied to the latest minor release line of each published package (`@epoch/core`, `@epoch/react`). Use current versions from npm when possible.
+Security updates are applied to the latest minor release line of each published package (`@epochflow/core`, `@epochflow/react`). Use current versions from npm when possible.
 
 ## Reporting a vulnerability
 

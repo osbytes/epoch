@@ -1,5 +1,5 @@
 ---
-description: TypeScript quality standards for the Epoch project
+description: TypeScript quality standards for the Epoch Flow project
 globs: "**/*.ts,**/*.tsx"
 alwaysApply: true
 ---

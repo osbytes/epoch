@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react'
-import type { FormFlow } from '@epoch/core'
+import type { FormFlow } from '@epochflow/core'
 
 const FormFlowContext = createContext<unknown>(null)
 

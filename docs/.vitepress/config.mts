@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Epoch',
+  title: 'Epoch Flow',
   description:
     'Draft-aware, end-to-end typed multi-step form flows for React + tRPC + Zod.',
   base: '/epoch/',
@@ -46,7 +46,7 @@ export default defineConfig({
     },
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © Epoch Contributors',
+      copyright: 'Copyright © Epoch Flow Contributors',
     },
   },
 })

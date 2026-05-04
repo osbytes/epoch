@@ -1,6 +1,6 @@
 # Examples
 
-> Common patterns and real-world use cases for Epoch.
+> Common patterns and real-world use cases for Epoch Flow.
 
 ---
 
@@ -10,7 +10,7 @@ A 4-step wizard with workspace creation, team info, optional invites, and review
 
 ```typescript
 import { z } from 'zod'
-import { createFormFlow } from '@epoch/core'
+import { createFormFlow } from '@epochflow/core'
 
 const OnboardingSchema = z.object({
   workspaceName: z.string().min(1),
@@ -211,10 +211,10 @@ function ReviewStep() {
 
 ## Example 6: tRPC Integration
 
-Epoch works seamlessly with tRPC mutations.
+Epoch Flow works seamlessly with tRPC mutations.
 
 ```typescript
-import { createFormFlow } from '@epoch/core'
+import { createFormFlow } from '@epochflow/core'
 import { trpc } from './trpc-client'
 
 const LeadSchema = z.object({

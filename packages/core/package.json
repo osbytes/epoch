@@ -1,7 +1,7 @@
 {
-  "name": "@epoch/core",
+  "name": "@epochflow/core",
   "version": "0.1.0",
-  "description": "Framework-agnostic state machine + persistence engine for multi-step forms",
+  "description": "Epoch Flow — framework-agnostic state machine + persistence for multi-step forms",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -34,6 +34,9 @@
     "headless"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/osbytes/epoch.git",

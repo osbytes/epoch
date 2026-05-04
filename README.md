@@ -1,9 +1,9 @@
-# Epoch
+# Epoch Flow
 
 <p align="center">
   <img
     src="docs/public/logo.svg"
-    alt="Epoch — multi-step form flow"
+    alt="Epoch Flow — multi-step form flow"
     width="160"
     height="160"
   />
@@ -13,10 +13,10 @@
 
 <!-- Org set to osbytes -->
 [![CI](https://github.com/osbytes/epoch/actions/workflows/ci.yml/badge.svg)](https://github.com/osbytes/epoch/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@epoch/core)](https://www.npmjs.com/package/@epoch/core)
+[![npm](https://img.shields.io/npm/v/@epochflow/core)](https://www.npmjs.com/package/@epochflow/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Epoch is a thin, headless workflow orchestrator that composes **Zod** and **tRPC** into typed, persistent, multi-step form flows — without replacing either of them.
+Epoch Flow is a thin, headless workflow orchestrator that composes **Zod** and **tRPC** into typed, persistent, multi-step form flows — without replacing either of them.
 
 ## Features
 
@@ -31,12 +31,12 @@ Epoch is a thin, headless workflow orchestrator that composes **Zod** and **tRPC
 ## Install
 
 ```bash
-npm install @epoch/react zod react react-dom
+npm install @epochflow/react zod react react-dom
 # or
-pnpm add @epoch/react zod react react-dom
+pnpm add @epochflow/react zod react react-dom
 ```
 
-> `@epoch/core` is included automatically as a dependency of `@epoch/react`.
+> `@epochflow/core` is included automatically as a dependency of `@epochflow/react`.
 
 If you plan to submit data via tRPC, also install your tRPC client packages:
 
@@ -54,14 +54,14 @@ npm install @trpc/client @trpc/server
 | tRPC Client     | `^10.0.0 \| ^11.0.0` (optional) |
 | tRPC Server     | `^10.0.0 \| ^11.0.0` (optional) |
 
-> **React Server Components (RSC):** Epoch is currently client-only. It works inside `"use client"` boundaries in Next.js App Router.
+> **React Server Components (RSC):** Epoch Flow is currently client-only. It works inside `"use client"` boundaries in Next.js App Router.
 
 ## 30-Second Example
 
 ```tsx
 import { z } from 'zod'
-import { createFormFlow } from '@epoch/core'
-import { FormFlowProvider, useFormFlow } from '@epoch/react'
+import { createFormFlow } from '@epochflow/core'
+import { FormFlowProvider, useFormFlow } from '@epochflow/react'
 
 const LeadSchema = z.object({
   firstName: z.string().min(1),
@@ -118,22 +118,22 @@ function App() {
 
 ## What about React Hook Form?
 
-Epoch provides its own lightweight controlled-state form handling (`values` / `setValues`). You can use it **alongside** React Hook Form if you prefer — for example, using RHF inside individual steps for advanced field-level validation — but **React Hook Form is not required**.
+Epoch Flow provides its own lightweight controlled-state form handling (`values` / `setValues`). You can use it **alongside** React Hook Form if you prefer — for example, using RHF inside individual steps for advanced field-level validation — but **React Hook Form is not required**.
 
 ## Packages
 
 | Package | Purpose | Install |
 |---------|---------|---------|
-| `@epoch/core` | Framework-agnostic state machine, store, validation, persistence | Included with `@epoch/react` |
-| `@epoch/react` | React provider, hooks (`useFormFlow`, `useStepFields`, `usePersistedDraft`) | `npm i @epoch/react` |
+| `@epochflow/core` | Framework-agnostic state machine, store, validation, persistence | Included with `@epochflow/react` |
+| `@epochflow/react` | React provider, hooks (`useFormFlow`, `useStepFields`, `usePersistedDraft`) | `npm i @epochflow/react` |
 
 ## Compared to...
 
-| Tool | What it does | How Epoch differs |
+| Tool | What it does | How Epoch Flow differs |
 |------|-------------|---------------------|
-| **React Hook Form** | Performant form validation with uncontrolled inputs | Epoch focuses on multi-step orchestration, persistence, and tRPC submission — not field-level performance. Use both together if you like. |
-| **[Wizzard](https://github.com/ZizzX/wizzard-packages)** | Modular headless wizard engine with multiple framework bindings | Epoch is smaller and more opinionated: one factory (`createFormFlow`), one validation strategy (Zod), and first-class tRPC typing. |
-| **Rolling your own** | `useReducer` + `zodResolver` + `localStorage` | Epoch saves you from writing and maintaining the same glue code in every project. |
+| **React Hook Form** | Performant form validation with uncontrolled inputs | Epoch Flow focuses on multi-step orchestration, persistence, and tRPC submission — not field-level performance. Use both together if you like. |
+| **[Wizzard](https://github.com/ZizzX/wizzard-packages)** | Modular headless wizard engine with multiple framework bindings | Epoch Flow is smaller and more opinionated: one factory (`createFormFlow`), one validation strategy (Zod), and first-class tRPC typing. |
+| **Rolling your own** | `useReducer` + `zodResolver` + `localStorage` | Epoch Flow saves you from writing and maintaining the same glue code in every project. |
 
 ## Demo
 
@@ -164,4 +164,4 @@ pnpm dev
 
 ## License
 
-MIT © Epoch Contributors
+MIT © Epoch Flow Contributors

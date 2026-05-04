@@ -1,6 +1,6 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "name": "Epoch",
+  "name": "Epoch Flow",
   "entryPoints": [
     "packages/core/src/index.ts",
     "packages/react/src/index.ts"

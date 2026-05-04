@@ -1,5 +1,5 @@
 ---
-description: Testing rules for the Epoch project
+description: Testing rules for the Epoch Flow project
 globs: "**/*"
 alwaysApply: true
 ---

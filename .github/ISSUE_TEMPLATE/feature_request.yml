@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest an idea or improvement for Epoch.
+description: Suggest an idea or improvement for Epoch Flow.
 labels: [enhancement]
 body:
   - type: textarea

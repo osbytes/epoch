@@ -47,10 +47,10 @@ importers:
 
   apps/demo:
     dependencies:
-      '@epoch/core':
+      '@epochflow/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@epoch/react':
+      '@epochflow/react':
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -117,7 +117,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@epoch/core':
+      '@epochflow/core':
         specifier: workspace:*
         version: link:../core
       '@trpc/client':

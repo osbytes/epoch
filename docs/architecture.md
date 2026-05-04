@@ -1,12 +1,12 @@
 # Architecture
 
-> How Epoch works under the hood.
+> How Epoch Flow works under the hood.
 
 ---
 
 ## Design Principles
 
-1. **Headless** — No UI opinions. Epoch is data + logic only.
+1. **Headless** — No UI opinions. Epoch Flow is data + logic only.
 2. **Framework-agnostic core** — The state machine, store, and validation run in vanilla JS.
 3. **Composable** — Works with React Hook Form, Zod, and tRPC without replacing them.
 4. **Type-safe end-to-end** — Your Zod schema type flows through every layer.
@@ -28,7 +28,7 @@
 └─────────┼───────────────────────────────┘
           │ React Context
 ┌─────────▼───────────────────────────────┐
-│         @epoch/core                     │
+│         @epochflow/core                     │
 │  ┌──────────────┐  ┌─────────────────┐  │
 │  │ createStore  │  │ createStateMachine│ │
 │  │ (observable) │  │ (navigation)     │  │
@@ -274,8 +274,8 @@ On error: store.submitError = error, return null
 
 | Package | Approximate Size (gzipped) |
 |---------|---------------------------|
-| `@epoch/core` | ~1.7 KB |
-| `@epoch/react` | ~7 KB |
+| `@epochflow/core` | ~1.7 KB |
+| `@epochflow/react` | ~7 KB |
 | **Total** | **~9 KB** |
 
 These are rough estimates from the build output. The core stays small because it has zero runtime dependencies.

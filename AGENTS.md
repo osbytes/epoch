@@ -1,6 +1,6 @@
-# Epoch — Agent Instructions
+# Epoch Flow — Agent Instructions
 
-> This document contains mandatory rules for AI coding assistants working on the Epoch project.
+> This document contains mandatory rules for AI coding assistants working on the Epoch Flow project.
 > **Read this entire file before making any changes.**
 
 ---
@@ -110,7 +110,7 @@
 - Never create circular dependencies between packages.
 
 ### 4.2 Headless Library
-- Epoch is headless. **Never** add UI components, CSS, or styling to `packages/core/` or `packages/react/`.
+- Epoch Flow is headless. **Never** add UI components, CSS, or styling to `packages/core/` or `packages/react/`.
 - The demo app (`apps/demo/`) is the only place for UI and styling.
 
 ### 4.3 Peer Dependencies

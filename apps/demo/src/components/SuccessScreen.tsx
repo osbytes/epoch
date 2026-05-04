@@ -1,4 +1,4 @@
-import { useFormFlow } from '@epoch/react'
+import { useFormFlow } from '@epochflow/react'
 import type { OnboardingData } from '../schema'
 
 interface WorkspaceResponse {

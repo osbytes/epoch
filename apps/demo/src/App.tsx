@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { FormFlowProvider, useFormFlow, usePersistedDraft } from '@epoch/react'
+import { FormFlowProvider, useFormFlow, usePersistedDraft } from '@epochflow/react'
 import type { OnboardingData } from './schema'
 import { onboardingFlow } from './flow'
 import { StepIndicator } from './components/StepIndicator'
@@ -140,7 +140,7 @@ function Wizard(): JSX.Element {
       <div className="mx-auto max-w-lg">
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Epoch
+            Epoch Flow
           </h1>
           <p className="mt-2 text-lg text-gray-600">SaaS Onboarding Wizard</p>
         </div>
@@ -156,7 +156,7 @@ function Wizard(): JSX.Element {
         </div>
 
         <p className="mt-6 text-center text-xs text-gray-400">
-          Built with Epoch — draft-aware, typed multi-step forms
+          Built with Epoch Flow — draft-aware, typed multi-step forms
         </p>
       </div>
     </div>

@@ -1,16 +1,16 @@
-# @epoch/core
+# @epochflow/core
 
 > Framework-agnostic state machine + persistence engine for multi-step forms.
 
 ## Install
 
 ```bash
-npm install @epoch/core zod
+npm install @epochflow/core zod
 # or
-pnpm add @epoch/core zod
+pnpm add @epochflow/core zod
 ```
 
-You typically don't install `core` directly — it's included as a dependency of `@epoch/react`. Install `core` directly only if you're building a framework adapter (Vue, Svelte, etc.).
+You typically don't install `core` directly — it's included as a dependency of `@epochflow/react`. Install `core` directly only if you're building a framework adapter (Vue, Svelte, etc.).
 
 ## Documentation
 
@@ -24,4 +24,4 @@ Full guides and API reference live in the [repository docs folder](https://githu
 
 ## License
 
-MIT © Epoch Contributors
+MIT © Epoch Flow Contributors

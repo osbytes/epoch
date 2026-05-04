@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { z } from 'zod'
-import { createFormFlow } from '@epoch/core'
+import { createFormFlow } from '@epochflow/core'
 import {
   FormFlowProvider,
   useFormFlow,

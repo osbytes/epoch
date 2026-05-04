@@ -21,9 +21,13 @@ jobs:
           registry-url: https://registry.npmjs.org
       - run: pnpm install
       - run: pnpm build
+      # Requires repo secret NPM_TOKEN (token whose user can publish @epochflow/* on npm).
+      # setup-node writes .npmrc using NODE_AUTH_TOKEN; changesets/action reads NPM_TOKEN — set both.
+      # E404 on PUT .../@epochflow%2f... usually means scope permission (create/join npm org "epochflow"), not a missing secret.
       - uses: changesets/action@v1
         with:
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

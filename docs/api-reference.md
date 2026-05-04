@@ -1,12 +1,12 @@
 # API Reference
 
-> Complete documentation of every public export from `@epoch/core` and `@epoch/react`.
+> Complete documentation of every public export from `@epochflow/core` and `@epochflow/react`.
 
 ---
 
 ## Table of Contents
 
-- [@epoch/core](#epoch-core)
+- [@epochflow/core](#epochflow-core)
   - [`createFormFlow`](#createformflow)
   - [`FlowConfig`](#flowconfig)
   - [`FlowState`](#flowstate)
@@ -19,7 +19,7 @@
   - [`ValidationAdapter`](#validationadapter)
   - [`createStateMachine`](#createstatemachine)
   - [`FlowStatus`](#flowstatus)
-- [@epoch/react](#epoch-react)
+- [@epochflow/react](#epochflow-react)
   - [`FormFlowProvider`](#formflowprovider)
   - [`useFormFlow`](#useformflow)
   - [`useFormFlowContext`](#useformflowcontext)
@@ -28,7 +28,7 @@
 
 ---
 
-## `@epoch/core` {#epoch-core}
+## `@epochflow/core` {#epochflow-core}
 
 ### `createFormFlow`
 
@@ -261,7 +261,7 @@ High-level status of the form flow.
 
 ---
 
-## `@epoch/react` {#epoch-react}
+## `@epochflow/react` {#epochflow-react}
 
 ### `FormFlowProvider`
 
@@ -426,7 +426,7 @@ function DraftBanner() {
 
 ## Type Inference Chain
 
-Epoch's type safety flows from your Zod schema through every layer:
+Epoch Flow's type safety flows from your Zod schema through every layer:
 
 ```
 Zod Schema

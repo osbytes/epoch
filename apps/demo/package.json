@@ -1,8 +1,8 @@
 {
-  "name": "@epoch/demo",
+  "name": "@epochflow/demo",
   "version": "0.0.0",
   "private": true,
-  "description": "SaaS onboarding wizard demo for Epoch",
+  "description": "SaaS onboarding wizard demo for Epoch Flow",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,8 +14,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@epoch/core": "workspace:*",
-    "@epoch/react": "workspace:*",
+    "@epochflow/core": "workspace:*",
+    "@epochflow/react": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.50.0",

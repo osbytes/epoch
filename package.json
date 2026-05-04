@@ -2,7 +2,7 @@
   "name": "epoch",
   "version": "1.0.0",
   "private": true,
-  "description": "Headless multi-step form orchestration layer for React + tRPC + Zod",
+  "description": "Epoch Flow — headless multi-step form orchestration for React + tRPC + Zod",
   "scripts": {
     "build": "turbo run build",
     "test": "turbo run test",
@@ -31,7 +31,7 @@
     "headless",
     "typescript"
   ],
-  "author": "Epoch Contributors",
+  "author": "Epoch Flow Contributors",
   "license": "MIT",
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {

@@ -17,7 +17,7 @@ export default defineConfig({
         '@trpc/client',
         '@trpc/server',
         'zod',
-        '@epoch/core',
+        '@epochflow/core',
       ],
     },
   },

@@ -1,22 +1,22 @@
-# @epoch/react
+# @epochflow/react
 
-> React hooks and provider for Epoch multi-step form flows.
+> React hooks and provider for Epoch Flow multi-step form flows.
 
 ## Install
 
 ```bash
-npm install @epoch/react zod react react-dom
+npm install @epochflow/react zod react react-dom
 # or
-pnpm add @epoch/react zod react react-dom
+pnpm add @epochflow/react zod react react-dom
 ```
 
-`@epoch/core` is included automatically.
+`@epochflow/core` is included automatically.
 
 ## Usage
 
 ```tsx
-import { createFormFlow } from '@epoch/core'
-import { FormFlowProvider, useFormFlow } from '@epoch/react'
+import { createFormFlow } from '@epochflow/core'
+import { FormFlowProvider, useFormFlow } from '@epochflow/react'
 
 const flow = createFormFlow({
   schema: MySchema,
@@ -34,7 +34,7 @@ function App() {
 
 ## What about React Hook Form?
 
-Epoch provides its own lightweight controlled-state form handling (`values` / `setValues`). You can use it **alongside** React Hook Form if you prefer — for example, using RHF inside individual steps for advanced field-level validation — but **React Hook Form is not required**.
+Epoch Flow provides its own lightweight controlled-state form handling (`values` / `setValues`). You can use it **alongside** React Hook Form if you prefer — for example, using RHF inside individual steps for advanced field-level validation — but **React Hook Form is not required**.
 
 ## Documentation
 
@@ -50,4 +50,4 @@ Full guides and API reference live in the [repository docs folder](https://githu
 
 ## License
 
-MIT © Epoch Contributors
+MIT © Epoch Flow Contributors

@@ -1,4 +1,4 @@
-import { createFormFlow } from '@epoch/core'
+import { createFormFlow } from '@epochflow/core'
 import { OnboardingSchema } from './schema'
 import { trpc } from './mockTrpc'
 

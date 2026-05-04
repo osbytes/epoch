@@ -1,7 +1,7 @@
 {
-  "name": "@epoch/react",
+  "name": "@epochflow/react",
   "version": "0.1.0",
-  "description": "React bindings for Epoch multi-step form orchestration",
+  "description": "Epoch Flow — React bindings for multi-step form orchestration",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -35,6 +35,9 @@
     "headless"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/osbytes/epoch.git",
@@ -45,7 +48,7 @@
   },
   "homepage": "https://osbytes.github.io/epoch/",
   "dependencies": {
-    "@epoch/core": "workspace:*"
+    "@epochflow/core": "workspace:*"
   },
   "peerDependencies": {
     "@trpc/client": "^10.0.0 || ^11.0.0",

@@ -1,4 +1,4 @@
-# Getting Started with Epoch
+# Getting Started with Epoch Flow
 
 > A step-by-step guide from zero to your first multi-step form.
 
@@ -13,12 +13,12 @@
 ## Installation
 
 ```bash
-npm install @epoch/react zod react react-dom
+npm install @epochflow/react zod react react-dom
 # or
-pnpm add @epoch/react zod react react-dom
+pnpm add @epochflow/react zod react react-dom
 ```
 
-`@epoch/core` is included automatically as a dependency.
+`@epochflow/core` is included automatically as a dependency.
 
 If you plan to submit data via tRPC, also install your tRPC client packages:
 
@@ -34,19 +34,19 @@ npm install @trpc/client @trpc/server
 | Zod | `^3.22.0` |
 | tRPC | `^10.0.0 \| ^11.0.0` (optional) |
 
-> **React Server Components (RSC):** Epoch is currently client-only. Use it inside `"use client"` boundaries in Next.js App Router.
+> **React Server Components (RSC):** Epoch Flow is currently client-only. Use it inside `"use client"` boundaries in Next.js App Router.
 
 ---
 
 ### What about React Hook Form?
 
-Epoch provides its own lightweight controlled-state form handling (`values` / `setValues`). You can use it **alongside** React Hook Form if you prefer — for example, using RHF inside individual steps for advanced field-level validation — but **React Hook Form is not required**.
+Epoch Flow provides its own lightweight controlled-state form handling (`values` / `setValues`). You can use it **alongside** React Hook Form if you prefer — for example, using RHF inside individual steps for advanced field-level validation — but **React Hook Form is not required**.
 
 ---
 
 ## Step 1: Define Your Schema
 
-Epoch uses **Zod** to define the shape of your form and validate each step.
+Epoch Flow uses **Zod** to define the shape of your form and validate each step.
 
 ```typescript
 import { z } from 'zod'
@@ -77,7 +77,7 @@ export type OnboardingData = z.infer<typeof OnboardingSchema>
 Use `createFormFlow` to wire your schema, steps, persistence, and optional mutation together.
 
 ```typescript
-import { createFormFlow } from '@epoch/core'
+import { createFormFlow } from '@epochflow/core'
 import { OnboardingSchema } from './schema'
 
 export const onboardingFlow = createFormFlow({
@@ -118,7 +118,7 @@ export const onboardingFlow = createFormFlow({
 Wrap your component tree (or just the wizard) in `FormFlowProvider`.
 
 ```tsx
-import { FormFlowProvider } from '@epoch/react'
+import { FormFlowProvider } from '@epochflow/react'
 import { onboardingFlow } from './flow'
 
 function App() {
@@ -137,7 +137,7 @@ function App() {
 Use `useFormFlow` inside each step to read state, set values, and navigate.
 
 ```tsx
-import { useFormFlow } from '@epoch/react'
+import { useFormFlow } from '@epochflow/react'
 import type { OnboardingData } from './schema'
 
 export function WorkspaceStep() {
@@ -192,7 +192,7 @@ export function WorkspaceStep() {
 Render the correct step based on `currentStep`.
 
 ```tsx
-import { useFormFlow } from '@epoch/react'
+import { useFormFlow } from '@epochflow/react'
 import { WorkspaceStep } from './WorkspaceStep'
 import { TeamStep } from './TeamStep'
 import { ReviewStep } from './ReviewStep'
@@ -227,7 +227,7 @@ export function OnboardingWizard() {
 If you configured `persist`, use `usePersistedDraft` to show a "restore draft" banner. Gate the banner on `shouldShowRestorePrompt` (not only `hasDraft`) so it hides after the user restores while the snapshot can stay in storage.
 
 ```tsx
-import { usePersistedDraft } from '@epoch/react'
+import { usePersistedDraft } from '@epochflow/react'
 import type { OnboardingData } from './schema'
 
 export function DraftBanner() {
@@ -253,7 +253,7 @@ export function DraftBanner() {
 On your final step, call `submit()` after validating.
 
 ```tsx
-import { useFormFlow } from '@epoch/react'
+import { useFormFlow } from '@epochflow/react'
 
 export function ReviewStep() {
   const { values, isSubmitting, submitError, submit, back } = useFormFlow()

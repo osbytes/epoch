@@ -1,5 +1,5 @@
 ---
-description: Workflow rules for the Epoch project
+description: Workflow rules for the Epoch Flow project
 globs: "**/*"
 alwaysApply: true
 ---

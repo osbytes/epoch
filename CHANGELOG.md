@@ -4,7 +4,7 @@ This monorepo uses [Changesets](https://github.com/changesets/changesets) for ve
 
 After each release, package histories are recorded here:
 
-- [`@epoch/core`](./packages/core/CHANGELOG.md)
-- [`@epoch/react`](./packages/react/CHANGELOG.md)
+- [`@epochflow/core`](./packages/core/CHANGELOG.md)
+- [`@epochflow/react`](./packages/react/CHANGELOG.md)
 
 Until the first published release is cut with `pnpm version-packages`, those files may only contain this pointer.

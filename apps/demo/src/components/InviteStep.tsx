@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { useFormFlow } from '@epoch/react'
+import { useFormFlow } from '@epochflow/react'
 import type { OnboardingData } from '../schema'
 
 export function InviteStep(): JSX.Element {

@@ -1,10 +1,10 @@
-# Contributing to Epoch
+# Contributing to Epoch Flow
 
 Thanks for your interest in contributing! This guide covers project setup, common workflows, and how to open issues and pull requests.
 
 ## Project Setup
 
-Epoch is a pnpm monorepo. Make sure you have **Node.js 20+** and **pnpm** installed.
+Epoch Flow is a pnpm monorepo. Make sure you have **Node.js 20+** and **pnpm** installed.
 
 ```bash
 # Clone the repo
@@ -60,6 +60,17 @@ epoch/
    ```
 
 5. **Open a pull request** and fill out the PR template.
+
+## Releasing to npm (maintainers)
+
+The [Release workflow](https://github.com/osbytes/epoch/blob/main/.github/workflows/release.yml) runs on pushes to `main`. It uses [Changesets](https://github.com/changesets/changesets) to version packages and publish `@epochflow/core` and `@epochflow/react`.
+
+For publishes to succeed:
+
+1. **GitHub secret `NPM_TOKEN`** — Create an [npm automation token](https://docs.npmjs.com/creating-and-viewing-access-tokens) with permission to publish packages under the `@epochflow` scope. Add it as repository secret `NPM_TOKEN` (Organization secrets work if the repo belongs to an org).
+2. **`@epochflow` on npm** — Create a free [npm organization](https://docs.npmjs.com/organizations) named **`epochflow`** (npm scopes cannot contain spaces; this matches the **Epoch Flow** product name). Add the token’s npm user as an owner or member with publish access.
+
+If `NPM_TOKEN` is missing, the Changesets action logs `No NPM_TOKEN or OIDC available`. If the secret is set but **`npm publish` still fails with `E404 Not Found` on `PUT .../@epochflow%2f...`**, npm is usually rejecting the publish (and returning a misleading 404): the token’s user must be allowed to publish **`@epochflow/core`** and **`@epochflow/react`** (org membership or a granular token that lists those packages). Confirm locally with `npm whoami` after `npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"`.
 
 ## TypeScript Standards
 

@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useFormFlow } from '@epoch/react'
+import { useFormFlow } from '@epochflow/react'
 import type { OnboardingData } from '../schema'
 
 const TEAM_SIZE_OPTIONS = ['1-5', '6-20', '21-50', '51-100', '100+'] as const

@@ -1,5 +1,5 @@
 ---
-description: Architecture rules for the Epoch monorepo
+description: Architecture rules for the Epoch Flow monorepo
 globs: "**/*"
 alwaysApply: true
 ---
@@ -13,7 +13,7 @@ alwaysApply: true
 - Never create circular dependencies between packages.
 
 ## Headless Library
-- Epoch is headless. **Never** add UI components, CSS, or styling to `packages/core/` or `packages/react/`.
+- Epoch Flow is headless. **Never** add UI components, CSS, or styling to `packages/core/` or `packages/react/`.
 - The demo app (`apps/demo/`) is the only place for UI and styling.
 
 ## Peer Dependencies
